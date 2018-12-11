@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Results</title>
+</head>
+
+<body>
+    <div class="container">
+        <h5 class="center">Results</h5>
+        <ul></ul>
+    </div>
+</body>
+<script>
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+    const ul = document.querySelector('ul');
+
+    ipcRenderer.on('data', function (e, dataJson) {
+        var data = JSON.parse(dataJson);
+        ul.className = 'collection';
+        if (data.pc) {
+            // pc was checked
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const pcText = document.createTextNode('Pc');
+
+            li.appendChild(pcText);
+            ul.appendChild(li);
+        };
+        if (data.ltop) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const ltopText = document.createTextNode('Your laptop spends 71 kwh per year.');
+
+            li.appendChild(ltopText);
+            ul.appendChild(li);
+        };
+        if (data.tpot) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const tpotText = document.createTextNode('tpot');
+
+            li.appendChild(tpotText);
+            ul.appendChild(li);
+        };
+        if (data.coffeeM) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const coffeeMText = document.createTextNode('coffeeM');
+
+            li.appendChild(coffeeMText);
+            ul.appendChild(li);
+        };
+        if (data.tstr) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const tstrText = document.createTextNode('tstr');
+
+            li.appendChild(tstrText);
+            ul.appendChild(li);
+        };
+        if (data.aSys) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const aSysText = document.createTextNode('aSys');
+
+            li.appendChild(aSysText);
+            ul.appendChild(li);
+        };
+        if (data.gCons) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const gConsText = document.createTextNode('gCons');
+
+            li.appendChild(gConsText);
+            ul.appendChild(li);
+        };
+        if (data.aCond) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const aCondText = document.createTextNode('aCond');
+
+            li.appendChild(aCondText);
+            ul.appendChild(li);
+        };
+        if (data.washingM !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            let washingMText;
+            switch (data.washingM) {
+                case 'a+++':
+                    washingMText = document.createTextNode('washingM A+++');
+                    break;
+                case 'a++':
+                    washingMText = document.createTextNode('washingM A++');
+                    break;
+                case 'a+':
+                    washingMText = document.createTextNode('washingM A+');
+                    break;
+                case 'a':
+                    washingMText = document.createTextNode('washingM A');
+                    break;
+                case 'b':
+                    washingMText = document.createTextNode('washingM B');
+                    break;
+                case 'c':
+                    washingMText = document.createTextNode('washingM C');
+                    break;
+                case 'd':
+                    washingMText = document.createTextNode('washingM D');
+                    break;
+            };
+            li.appendChild(washingMText);
+            ul.appendChild(li);
+        }
+        if (data.tv !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            let tvText;
+            switch (data.tv) {
+                case 'a+++':
+                    tvText = document.createTextNode('Tv A+++');
+                    break;
+                case 'a++':
+                    tvText = document.createTextNode('Tv A++');
+                    break;
+                case 'a+':
+                    tvText = document.createTextNode('Tv A+');
+                    break;
+                case 'a':
+                    tvText = document.createTextNode('Tv A');
+                    break;
+                case 'b':
+                    tvText = document.createTextNode('Tv B');
+                    break;
+                case 'c':
+                    tvText = document.createTextNode('Tv C');
+                    break;
+                case 'd':
+                    tvText = document.createTextNode('Tv D');
+                    break;
+            };
+            li.appendChild(tvText);
+            ul.appendChild(li);
+        }
+        if (data.ovn !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            let ovnText;
+            switch (data.ovn) {
+                case 'a+++':
+                    ovnText = document.createTextNode('ovn A+++');
+                    break;
+                case 'a++':
+                    ovnText = document.createTextNode('ovn A++');
+                    break;
+                case 'a+':
+                    ovnText = document.createTextNode('ovn A+');
+                    break;
+                case 'a':
+                    ovnText = document.createTextNode('ovn A');
+                    break;
+                case 'b':
+                    ovnText = document.createTextNode('ovn B');
+                    break;
+                case 'c':
+                    ovnText = document.createTextNode('ovn C');
+                    break;
+                case 'd':
+                    ovnText = document.createTextNode('ovn D');
+                    break;
+            };
+            li.appendChild(ovnText);
+            ul.appendChild(li);
+        }
+        if (data.dishW !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            let dishWText;
+            switch (data.dishW) {
+                case 'a+++':
+                    dishWText = document.createTextNode('dishW A+++');
+                    break;
+                case 'a++':
+                    dishWText = document.createTextNode('dishW A++');
+                    break;
+                case 'a+':
+                    dishWText = document.createTextNode('dishW A+');
+                    break;
+                case 'a':
+                    dishWText = document.createTextNode('dishW A');
+                    break;
+                case 'b':
+                    dishWText = document.createTextNode('dishW B');
+                    break;
+                case 'c':
+                    dishWText = document.createTextNode('dishW C');
+                    break;
+                case 'd':
+                    dishWText = document.createTextNode('dishW D');
+                    break;
+            };
+            li.appendChild(dishWText);
+            ul.appendChild(li);
+        }
+    });
+
+    ipcRenderer.on('data2', function (e, dataJson) {
+        var data = JSON.parse(dataJson);
+        ul.className = 'collection';
+        if (data.windowT !== false) {
+            const li = document.createElement('li');
+            let windowANum = Number(data.windowA);
+            li.className = 'collection-item';
+            switch (data.windowT) {
+                case 'sp':
+                    li.textContent = Math.round(windowANum * 20 * 0.8 / 0.005 / 1000 * 24 * 180) + ' kwh';
+                    break;
+                case 'dp':
+                    li.textContent = Math.round(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) / 1000 * 24 * 180) + ' kwh';
+                    break;
+            };
+            var xkwh = parseInt(li.textContent);
+            ul.appendChild(li);
+        }
+        if (data.homeT !== false) {
+            if (data.homeT == 'flat') {
+                const li = document.createElement('li');
+                li.className = 'collection-item';
+                li.textContent = xkwh * 53 / 1000 + ' eur';
+                ul.appendChild(li);
+            };
+        }
+        if (data.heatingT !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            switch (data.heatingT) {
+                case 'firewood':
+                    li.textContent = xkwh * 8 / 1000 + ' eur';
+                    break;
+                case 'heat-pellets':
+                    li.textContent = xkwh * 5.8 / 1000 + ' eur';
+                    break;
+            };
+            ul.appendChild(li);
+        }
+        if (data.heatM !== false) {
+            const li = document.createElement('li');
+            let heatMNum = Number(data.heatM);
+            li.className = 'collection-item';
+            li.textContent = Math.round(245 / heatMNum * 0.12 * 100) / 100 + ' months';
+            ul.appendChild(li);
+        }
+    });
+
+    ipcRenderer.on('data3', function (e, dataJson) {
+        var data = JSON.parse(dataJson);
+        ul.className = 'collection';
+        if (data.showerA !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            switch (data.showerA) {
+                case 'yes':
+                    li.textContent = 'You are using shower!';
+                    break;
+                case 'no':
+                    li.textContent = 'Please use shower.';
+                    break;
+            };
+            ul.appendChild(li);
+        }
+        if (data.showerT !== false) {
+            const li = document.createElement('li');
+            let showerTNum = Number(data.showerT);
+            li.className = 'collection-item';
+            li.textContent = showerTNum;
+            ul.appendChild(li);
+        }
+        if (data.dishWA !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            switch (data.dishWA) {
+                case 'yes':
+                    li.textContent = 'You have dishwasher!';
+                    break;
+                case 'no':
+                    li.textContent = 'Please buy a dishwasher.';
+                    break;
+            };
+            ul.appendChild(li);
+        }
+    });
+</script>
+
+</html>

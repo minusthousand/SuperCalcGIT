@@ -1,0 +1,18 @@
+{
+  "name": "supercalc",
+  "version": "0.1.0",
+  "description": "App for calculating elecricity savings",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "package-win": "electron-packager . SuperCalc v0.1 --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/iconSC.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"SuperCalc v0.1"
+  },
+  "author": "minusthousand",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^3.0.10"
+  },
+  "devDependencies": {
+    "electron-packager": "^12.2.0"
+  }
+}
