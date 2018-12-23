@@ -16,10 +16,10 @@
     const electron = require('electron');
     const { ipcRenderer } = electron;
     const ul = document.querySelector('ul');
-
     ipcRenderer.on('data', function (e, dataJson) {
         var data = JSON.parse(dataJson);
         ul.className = 'collection';
+
         if (data.pc) {
             // pc was checked
             const li = document.createElement('li');
@@ -216,10 +216,10 @@
             li.className = 'collection-item';
             switch (data.windowT) {
                 case 'sp':
-                    li.textContent = Math.round(windowANum * 20 * 0.8 / 0.005 / 1000 * 24 * 180) + ' kwh';
+                    li.textContent = Math.round(windowANum * 20 * 0.8 / 0.005 / 1000 * 24 * 180) + ' kwh you lose because of windows.';
                     break;
                 case 'dp':
-                    li.textContent = Math.round(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) / 1000 * 24 * 180) + ' kwh';
+                    li.textContent = Math.round(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) / 1000 * 24 * 180) + ' kwh you lose because of windows.';
                     break;
             };
             var xkwh = parseInt(li.textContent);
@@ -229,7 +229,7 @@
             if (data.homeT == 'flat') {
                 const li = document.createElement('li');
                 li.className = 'collection-item';
-                li.textContent = xkwh * 53 / 1000 + ' eur';
+                li.textContent = Math.round(xkwh * 53 / 1000 * 100) / 100 + ' euros you lose because of windows.';
                 ul.appendChild(li);
             };
         }
@@ -238,10 +238,10 @@
             li.className = 'collection-item';
             switch (data.heatingT) {
                 case 'firewood':
-                    li.textContent = xkwh * 8 / 1000 + ' eur';
+                    li.textContent = Math.round(xkwh * 8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
                     break;
                 case 'heat-pellets':
-                    li.textContent = xkwh * 5.8 / 1000 + ' eur';
+                    li.textContent = Math.round(xkwh * 5.8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
                     break;
             };
             ul.appendChild(li);
@@ -250,7 +250,7 @@
             const li = document.createElement('li');
             let heatMNum = Number(data.heatM);
             li.className = 'collection-item';
-            li.textContent = Math.round(245 / heatMNum * 0.12 * 100) / 100 + ' months';
+            li.textContent = 'In ' + Math.round(245 / heatMNum * 0.12 * 100) / 100 + ' months saving will be equal with the price of thermostat.';
             ul.appendChild(li);
         }
     });
@@ -272,11 +272,16 @@
             ul.appendChild(li);
         }
         if (data.showerT !== false) {
-            const li = document.createElement('li');
+            const liW = document.createElement('li');
+            const liM = document.createElement('li');
             let showerTNum = Number(data.showerT);
-            li.className = 'collection-item';
-            li.textContent = showerTNum;
-            ul.appendChild(li);
+            liW.className = 'collection-item';
+            liW.textContent = Math.round((showerTNum * 54 * 65.1 - showerTNum * 54 * 40) * 100) / 100 + ' m³ of water you can save by using water efficient shower.';
+            const waterS = showerTNum * 54 * 65.1 - showerTNum * 54 * 40;
+            liM.className = 'collection-item';
+            liM.textContent = Math.round((waterS * 1.93 / 1000) * 100) / 100 + ' euros you can save by using water efficient shower.';
+            ul.appendChild(liW);
+            ul.appendChild(liM);
         }
         if (data.dishWA !== false) {
             const li = document.createElement('li');
