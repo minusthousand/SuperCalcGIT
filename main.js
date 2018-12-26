@@ -26,7 +26,7 @@ ipcMain.on('button:clicked', function (e, data) {
         height: 400,
         title: 'Results'
     });
-    resultWindow.setMenu(null);
+    //   resultWindow.setMenu(null);
     resultWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'resultWindow.html'),
         protocol: 'file',
