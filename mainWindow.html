@@ -132,7 +132,7 @@
             </div>
         </div>
         <div class="col s6">
-            <h4>Teapot</h4>
+            <h4>Computer speakers</h4>
             <div class="row">
                 <div class="col s6">
                     <p>Check if you have this.</p>
@@ -140,7 +140,7 @@
                 <form action="#" class="col s6">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="teapot" />
+                            <input type="checkbox" class="filled-in" id="com-spk" />
                             <span></span>
                         </label>
                     </p>
@@ -164,7 +164,7 @@
             </div>
         </div>
         <div class="col s6">
-            <h4>Toaster</h4>
+            <h4>Microwave Oven</h4>
             <div class="row">
                 <div class="col s6">
                     <p>Check if you have this.</p>
@@ -172,7 +172,7 @@
                 <form action="#" class="col s6">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="toaster" />
+                            <input type="checkbox" class="filled-in" id="microwave" />
                             <span></span>
                         </label>
                     </p>
@@ -180,7 +180,7 @@
             </div>
         </div>
         <div class="col s6">
-            <h4>Audio system</h4>
+            <h4>Audio minisystem</h4>
             <div class="row">
                 <div class="col s6">
                     <p>Check if you have this.</p>
@@ -230,15 +230,9 @@
         <div class="col s6">
             <h4>Washing Machine</h4>
             <div class="row">
-                <select class="browser-default col s6" id="washing-machine-select">
-                    <option value="" disabled>Energy Efficiency</option>
-                    <option value="a+++" selected>A+++</option>
-                    <option value="a++">A++</option>
-                    <option value="a+">A+</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
-                </select>
+                <div class="col s6">
+                    <p>Check if you have this.</p>
+                </div>
                 <form action="#" class="col s6">
                     <p>
                         <label>
@@ -253,13 +247,10 @@
             <h4>Television</h4>
             <div class="row">
                 <select class="browser-default col s6" id="television-select">
-                    <option value="" disabled>Energy Efficiency</option>
-                    <option value="a+++" selected>A+++</option>
-                    <option value="a++">A++</option>
-                    <option value="a+">A+</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
+                    <option value="" disabled>TV Type</option>
+                    <option value="LED" selected>LED</option>
+                    <option value="CRT">CRT</option>
+                    <option value="RPTV">RPTV</option>
                 </select>
                 <form action="#" class="col s6">
                     <p>
@@ -272,21 +263,17 @@
             </div>
         </div>
         <div class="col s6">
-            <h4>Oven</h4>
+            <h4>Printer</h4>
             <div class="row">
-                <select class="browser-default col s6" id="oven-select">
-                    <option value="" disabled>Energy Efficiency</option>
-                    <option value="a+++" selected>A+++</option>
-                    <option value="a++">A++</option>
-                    <option value="a+">A+</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
+                <select class="browser-default col s6" id="printer-select">
+                    <option value="" disabled>Printer Type</option>
+                    <option value="lsr" selected>Laser</option>
+                    <option value="ink">Inkjet</option>
                 </select>
                 <form action="#" class="col s6">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="oven" />
+                            <input type="checkbox" class="filled-in" id="printer" />
                             <span></span>
                         </label>
                     </p>
@@ -296,15 +283,9 @@
         <div class="col s6">
             <h4>Dishwasher</h4>
             <div class="row">
-                <select class="browser-default col s6" id="dishwasher-select">
-                    <option value="" disabled>Energy Efficiency</option>
-                    <option value="a+++" selected>A+++</option>
-                    <option value="a++">A++</option>
-                    <option value="a+">A+</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
-                </select>
+                <div class="col s6">
+                    <p>Check if you have this.</p>
+                </div>
                 <form action="#" class="col s6">
                     <p>
                         <label>
@@ -392,16 +373,16 @@
 
     var pc = id('computer'),
         ltop = id('laptop'),
-        tpot = id('teapot'),
+        comSpk = id('com-spk'),
         coffeeM = id('coffeeMachine'),
-        tstr = id('toaster'),
+        microw = id('microwave'),
         aSys = id('audio-system'),
         gCons = id('game-console'),
         aCond = id('air-conditioner'),
         washingM = id('washingMachine'),
         tv = id('television'),
         dishW = id('dishwasher'),
-        ovn = id('oven');
+        prnt = id('printer');
     var btn = id('button');
     var btn2 = id('button-2');
     var btn3 = id('button-3');
@@ -419,7 +400,7 @@
     btn.addEventListener('click', sendResultsE);
 
     function sendResultsE(e) {
-        let elemsSome = [pc, ltop, tpot, coffeeM, tstr, aSys, gCons, aCond, washingM, tv, ovn, dishW].some(function (item) {
+        let elemsSome = [pc, ltop, comSpk, coffeeM, microw, aSys, gCons, aCond, washingM, tv, prnt, dishW].some(function (item) {
             return item.checked;
         });
         e.preventDefault();
@@ -430,16 +411,16 @@
         ipcRenderer.send('button:clicked', JSON.stringify({
             pc: pc.checked,
             ltop: ltop.checked,
-            tpot: tpot.checked,
+            comSpk: comSpk.checked,
             coffeeM: coffeeM.checked,
-            tstr: tstr.checked,
+            microw: microw.checked,
             aSys: aSys.checked,
             gCons: gCons.checked,
             aCond: aCond.checked,
-            washingM: washingM.checked ? id('washing-machine-select').value : false,
+            washingM: washingM.checked,
             tv: tv.checked ? id('television-select').value : false,
-            ovn: ovn.checked ? id('oven-select').value : false,
-            dishW: dishW.checked ? id('dishwasher-select').value : false,
+            prnt: prnt.checked ? id('printer-select').value : false,
+            dishW: dishW.checked,
         }));
     };
 
