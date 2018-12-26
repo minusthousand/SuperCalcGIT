@@ -8,7 +8,8 @@
 
 <body>
     <div class="container">
-        <h5 class="center">Results</h5>
+        <h4 class="center">Results</h4>
+        <h6 class="center"></h6>
         <ul></ul>
     </div>
 </body>
@@ -16,15 +17,32 @@
     const electron = require('electron');
     const { ipcRenderer } = electron;
     const ul = document.querySelector('ul');
+    const h6 = document.querySelector('h6');
+    function rnd(number) {
+        return Math.round(number);
+    };
+
     ipcRenderer.on('data', function (e, dataJson) {
         var data = JSON.parse(dataJson);
         ul.className = 'collection';
+        var pcEg = 0,
+            ltopEg = 0,
+            comSpkEg = 0,
+            coffeeMEg = 0,
+            microwEg = 0,
+            aSysEg = 0,
+            aCondEg = 0,
+            gConsEg = 0,
+            washingMEg = 0,
+            tvEg = 0,
+            prntEg = 0;
 
         if (data.pc) {
             // pc was checked
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const pcText = document.createTextNode('Pc');
+            pcEg = rnd(2.84 * 8640 / 1000 * 100) / 100;
+            const pcText = document.createTextNode('Computer uses ' + pcEg + ' kwh per year on standby.');
 
             li.appendChild(pcText);
             ul.appendChild(li);
@@ -32,39 +50,44 @@
         if (data.ltop) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const ltopText = document.createTextNode('Your laptop spends 71 kwh per year.');
+            ltopEg = rnd(8.9 * 8640 / 1000 * 100) / 100;
+            const ltopText = document.createTextNode('Laptop uses ' + ltopEg + ' kwh per year on standby.');
 
             li.appendChild(ltopText);
             ul.appendChild(li);
         };
-        if (data.tpot) {
+        if (data.comSpk) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const tpotText = document.createTextNode('tpot');
+            comSpkEg = rnd(1.79 * 8640 / 1000 * 100) / 100;
+            const comSpkText = document.createTextNode('Computer speakers uses ' + comSpkEg + ' kwh per year on standby.');
 
-            li.appendChild(tpotText);
+            li.appendChild(comSpkText);
             ul.appendChild(li);
         };
         if (data.coffeeM) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const coffeeMText = document.createTextNode('coffeeM');
+            coffeeMEg = rnd(1.14 * 8640 / 1000 * 100) / 100;
+            const coffeeMText = document.createTextNode('Coffee machine uses ' + coffeeMEg + ' kwh per year on standby.');
 
             li.appendChild(coffeeMText);
             ul.appendChild(li);
         };
-        if (data.tstr) {
+        if (data.microw) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const tstrText = document.createTextNode('tstr');
+            microwEg = rnd(3.08 * 8640 / 1000 * 100) / 100;
+            const microwText = document.createTextNode('Microwave uses ' + microwEg + ' kwh per year on standby.');
 
-            li.appendChild(tstrText);
+            li.appendChild(microwText);
             ul.appendChild(li);
         };
         if (data.aSys) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const aSysText = document.createTextNode('aSys');
+            aSysEg = rnd(8.32 * 8640 / 1000 * 100) / 100;
+            const aSysText = document.createTextNode('Audio minisystem uses ' + aSysEg + ' kwh per year on standby.');
 
             li.appendChild(aSysText);
             ul.appendChild(li);
@@ -72,7 +95,8 @@
         if (data.gCons) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const gConsText = document.createTextNode('gCons');
+            gConsEg = rnd(1.01 * 8640 / 1000 * 100) / 100;
+            const gConsText = document.createTextNode('Game console uses ' + gConsEg + ' kwh per year on standby.');
 
             li.appendChild(gConsText);
             ul.appendChild(li);
@@ -80,38 +104,17 @@
         if (data.aCond) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            const aCondText = document.createTextNode('aCond');
+            aCondEg = rnd(0.9 * 8640 / 1000 * 100) / 100;
+            const aCondText = document.createTextNode('Air conditioner uses ' + aCondEg + ' kwh per year on standby.');
 
             li.appendChild(aCondText);
             ul.appendChild(li);
         };
-        if (data.washingM !== false) {
+        if (data.washingM) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            let washingMText;
-            switch (data.washingM) {
-                case 'a+++':
-                    washingMText = document.createTextNode('washingM A+++');
-                    break;
-                case 'a++':
-                    washingMText = document.createTextNode('washingM A++');
-                    break;
-                case 'a+':
-                    washingMText = document.createTextNode('washingM A+');
-                    break;
-                case 'a':
-                    washingMText = document.createTextNode('washingM A');
-                    break;
-                case 'b':
-                    washingMText = document.createTextNode('washingM B');
-                    break;
-                case 'c':
-                    washingMText = document.createTextNode('washingM C');
-                    break;
-                case 'd':
-                    washingMText = document.createTextNode('washingM D');
-                    break;
-            };
+            washingMEg = rnd(1 * 8640 / 1000 * 100) / 100;
+            const washingMText = document.createTextNode('Washing machine uses ' + washingMEg + ' kwh per year on standby.');
             li.appendChild(washingMText);
             ul.appendChild(li);
         }
@@ -120,91 +123,52 @@
             li.className = 'collection-item';
             let tvText;
             switch (data.tv) {
-                case 'a+++':
-                    tvText = document.createTextNode('Tv A+++');
+                case 'LED':
+                    tvEg = rnd(2.3 * 8640 / 1000 * 100) / 100;
+                    tvText = document.createTextNode('Televsion uses ' + tvEg + ' kwh per year on standby.');
                     break;
-                case 'a++':
-                    tvText = document.createTextNode('Tv A++');
+                case 'CRT':
+                    tvEg = rnd(2.88 * 8640 / 1000 * 100) / 100;
+                    tvText = document.createTextNode('Television uses ' + tvEg + ' kwh per year on standby.');
                     break;
-                case 'a+':
-                    tvText = document.createTextNode('Tv A+');
-                    break;
-                case 'a':
-                    tvText = document.createTextNode('Tv A');
-                    break;
-                case 'b':
-                    tvText = document.createTextNode('Tv B');
-                    break;
-                case 'c':
-                    tvText = document.createTextNode('Tv C');
-                    break;
-                case 'd':
-                    tvText = document.createTextNode('Tv D');
+                case 'RPTV':
+                    tvEg = rnd(6.6 * 8640 / 1000 * 100) / 100;
+                    tvText = document.createTextNode('Television uses ' + tvEg + ' kwh per year on standby.');
                     break;
             };
             li.appendChild(tvText);
             ul.appendChild(li);
         }
-        if (data.ovn !== false) {
+        if (data.prnt !== false) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            let ovnText;
-            switch (data.ovn) {
-                case 'a+++':
-                    ovnText = document.createTextNode('ovn A+++');
+            let prntText;
+            switch (data.prnt) {
+                case 'lsr':
+                    prntEg = rnd(1.58 * 8640 / 1000 * 100) / 100;
+                    prntText = document.createTextNode('Printer uses ' + prntEg + ' kwh per year on standby.');
                     break;
-                case 'a++':
-                    ovnText = document.createTextNode('ovn A++');
-                    break;
-                case 'a+':
-                    ovnText = document.createTextNode('ovn A+');
-                    break;
-                case 'a':
-                    ovnText = document.createTextNode('ovn A');
-                    break;
-                case 'b':
-                    ovnText = document.createTextNode('ovn B');
-                    break;
-                case 'c':
-                    ovnText = document.createTextNode('ovn C');
-                    break;
-                case 'd':
-                    ovnText = document.createTextNode('ovn D');
+                case 'ink':
+                    prntEg = rnd(1.26 * 8640 / 1000 * 100) / 100;
+                    prntText = document.createTextNode('Printer uses ' + prntEg + ' kwh per year on standby.');
                     break;
             };
-            li.appendChild(ovnText);
+            li.appendChild(prntText);
             ul.appendChild(li);
         }
-        if (data.dishW !== false) {
+        if (data.dishW) {
             const li = document.createElement('li');
             li.className = 'collection-item';
-            let dishWText;
-            switch (data.dishW) {
-                case 'a+++':
-                    dishWText = document.createTextNode('dishW A+++');
-                    break;
-                case 'a++':
-                    dishWText = document.createTextNode('dishW A++');
-                    break;
-                case 'a+':
-                    dishWText = document.createTextNode('dishW A+');
-                    break;
-                case 'a':
-                    dishWText = document.createTextNode('dishW A');
-                    break;
-                case 'b':
-                    dishWText = document.createTextNode('dishW B');
-                    break;
-                case 'c':
-                    dishWText = document.createTextNode('dishW C');
-                    break;
-                case 'd':
-                    dishWText = document.createTextNode('dishW D');
-                    break;
-            };
+            dishWEg = rnd(3 * 8640 / 1000 * 100) / 100;
+            const dishWText = document.createTextNode('Dishwasher uses ' + dishWEg + ' kwh per year on standby.');
+
             li.appendChild(dishWText);
             ul.appendChild(li);
         }
+
+        var totalNum = rnd((pcEg + ltopEg + comSpkEg + coffeeMEg + microwEg + aSysEg + aCondEg + gConsEg + washingMEg + tvEg + prntEg) * 100) / 100;
+        const totalText = document.createTextNode('Your electronics use ' + totalNum + ' kwh of energy per year on standby which costs ' + rnd(totalNum * 53 / 1000 * 100) / 100 + ' eur and by using this amount of electricity you produce ' + rnd(totalNum * 0.3 * 100) / 100 + ' kg of CO².');
+        h6.appendChild(totalText);
     });
 
     ipcRenderer.on('data2', function (e, dataJson) {
@@ -216,10 +180,10 @@
             li.className = 'collection-item';
             switch (data.windowT) {
                 case 'sp':
-                    li.textContent = Math.round(windowANum * 20 * 0.8 / 0.005 / 1000 * 24 * 180) + ' kwh you lose because of windows.';
+                    li.textContent = rnd(windowANum * 20 * 0.8 / 0.005 / 1000 * 24 * 180) + ' kwh you lose because of windows.';
                     break;
                 case 'dp':
-                    li.textContent = Math.round(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) / 1000 * 24 * 180) + ' kwh you lose because of windows.';
+                    li.textContent = rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) / 1000 * 24 * 180) + ' kwh you lose because of windows.';
                     break;
             };
             var xkwh = parseInt(li.textContent);
@@ -228,31 +192,50 @@
         if (data.homeT !== false) {
             if (data.homeT == 'flat') {
                 const li = document.createElement('li');
+                const li2 = document.createElement('li');
                 li.className = 'collection-item';
-                li.textContent = Math.round(xkwh * 53 / 1000 * 100) / 100 + ' euros you lose because of windows.';
+                li2.className = 'collection-item';
+                li.textContent = rnd(xkwh * 53 / 1000 * 100) / 100 + ' euros you lose because of windows.';
+                li2.textContent = rnd(xkwh * 0.018 * 100) / 100 + ' kg of CO² you produce beacause of lost energy.';
                 ul.appendChild(li);
+                ul.appendChild(li2);
             };
         }
         if (data.heatingT !== false) {
             const li = document.createElement('li');
+            const li2 = document.createElement('li');
             li.className = 'collection-item';
+            li2.className = 'collection-item';
             switch (data.heatingT) {
                 case 'firewood':
-                    li.textContent = Math.round(xkwh * 8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
+                    li.textContent = rnd(xkwh * 8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
                     break;
                 case 'heat-pellets':
-                    li.textContent = Math.round(xkwh * 5.8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
+                    li.textContent = rnd(xkwh * 5.8 / 1000 * 100) / 100 + ' euros you lose because of windows.';
                     break;
             };
+            li2.textContent = rnd(xkwh * 0.03 * 100) / 100 + ' kg of CO² you produce beacause of lost energy.';
             ul.appendChild(li);
+            ul.appendChild(li2);
         }
         if (data.heatM !== false) {
             const li = document.createElement('li');
+            const li2 = document.createElement('li');
             let heatMNum = Number(data.heatM);
             li.className = 'collection-item';
-            li.textContent = 'In ' + Math.round(245 / heatMNum * 0.12 * 100) / 100 + ' months saving will be equal with the price of thermostat.';
+            li2.className = 'collection-item';
+            li.textContent = 'In ' + rnd(245 / heatMNum * 0.12 * 100) / 100 + ' months saving will be equal with the price of thermostat.';
             ul.appendChild(li);
-        }
+            if (data.homeT == 'house') {
+                li2.textContent = rnd(heatMNum * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li2);
+            }
+            else if (data.homeT == 'flat') {
+                li2.textContent = rnd(heatMNum * 0.018 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li2);
+            }
+
+        };
     });
 
     ipcRenderer.on('data3', function (e, dataJson) {
@@ -263,10 +246,10 @@
             li.className = 'collection-item';
             switch (data.showerA) {
                 case 'yes':
-                    li.textContent = 'You are using shower!';
+                    li.textContent = 'You are saving up to 160 litres of water per washing time by using shower instead of bath.';
                     break;
                 case 'no':
-                    li.textContent = 'Please use shower.';
+                    li.textContent = 'You can save up to 160 litres of water per washing time by using shower.';
                     break;
             };
             ul.appendChild(li);
@@ -288,10 +271,10 @@
             li.className = 'collection-item';
             switch (data.dishWA) {
                 case 'yes':
-                    li.textContent = 'You have dishwasher!';
+                    li.textContent = 'You are saving up to 50 litres of water by using washing machine.';
                     break;
                 case 'no':
-                    li.textContent = 'Please buy a dishwasher.';
+                    li.textContent = 'You can save up to 50 litres of water by using washing machine.';
                     break;
             };
             ul.appendChild(li);
