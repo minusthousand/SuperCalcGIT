@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>SuperCalc</title>
+</head>
+
+<body>
+    <div class="container row">
+        <h4 class="center">Choose language/ Izvēlies valodu</h4>
+        <br>
+        <div class="container col s6">
+            <button class="waves-effect waves-light btn col s12" id="buttonEng">English/Angļu</button>
+        </div>
+        <div class="container col s6">
+            <button class="waves-effect waves-light btn col s12" id="buttonLv">Latvian/Latviešu</button>
+        </div>
+    </div>
+</body>
+<script>
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+
+    function id(id) {
+        return document.getElementById(id)
+    };
+
+    var btnEng = id('buttonEng'),
+        btnLv = id('buttonLv');
+
+    btnEng.addEventListener('click', requestEng);
+    btnLv.addEventListener('click', requestLv);
+
+    function requestEng() {
+        ipcRenderer.send('button:eng');
+    };
+
+    function requestLv() {
+        ipcRenderer.send('button:lv');
+    };
+</script>
+
+</html>
