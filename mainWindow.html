@@ -37,9 +37,20 @@
 
             </div>
         </div>
+
         <div class="hidden" id="shower-question">
             <h4>How often a week?</h4>
             <input type="text" id="shower-times" onkeypress="return isNumberKey(event)">Input here.</input>
+        </div>
+        <div class="row col s12">
+            <h4>What are you using to heat water?</h4>
+            <div class="row">
+                <select class="browser-default col s6" id="water-heat-select">
+                    <option value="boiler" selected>Boiler</option>
+                    <option value="frwd">Firewood</option>
+                    <option value="hpellets">Heating pellets</option>
+                </select>
+            </div>
         </div>
         <div class="row col s12">
             <h4>Do you have dishwasher?</h4>
@@ -65,7 +76,7 @@
 
             </div>
         </div>
-        <div id="house-q" class="hidden">
+        <div id="house-q" class="row col s12">
             <h4>What do you use for heating?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="heating-type-select">
@@ -473,6 +484,7 @@
         windowA = id('window-area');
 
     var showerT = id('shower-times'),
+        waterHeat = id('water-heat-select'),
         dishWA = id('dishwasher-answer-select');
 
     btn3.addEventListener('click', sendResultsW);
@@ -542,6 +554,7 @@
         ipcRenderer.send('button3:clicked', JSON.stringify({
             showerA: showerA.value,
             showerT: showerQ.className == 'row col s12' ? showerT.value : false,
+            waterHeat: waterHeat.value,
             dishWA: dishWA.value,
         }));
     };
