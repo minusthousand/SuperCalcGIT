@@ -507,7 +507,7 @@
             item.value = 1;
         });
 
-        ipcRenderer.send('button:clicked', JSON.stringify({
+        let data = {
             lghtblb: lghtblb.value,
             blbAmnt: blbAmnt.value,
             pc: pc.checked,
@@ -534,29 +534,33 @@
             tvAmnt: tvAmnt.value,
             prntAmnt: prntAmnt.value,
             dishWAmnt: dishWAmnt.value,
-        }));
+        };
+
+        ipcRenderer.send('button:clicked', data);
     };
 
     function sendResultsH(e) {
         e.preventDefault();
-        ipcRenderer.send('button2:clicked', JSON.stringify({
+        let data = {
             homeT: homeT.value,
             heatingT: houseQ.className == 'hidden' ? false : heatingT.value,
             windowT: windowT.value,
             windowA: windowA.value == '' ? false : windowA.value,
             heatM: heatM.value == '' ? false : heatM.value,
 
-        }));
+        };
+        ipcRenderer.send('button2:clicked', data);
     };
 
     function sendResultsW(e) {
         e.preventDefault();
-        ipcRenderer.send('button3:clicked', JSON.stringify({
+        let data = {
             showerA: showerA.value,
             showerT: showerQ.className == 'row col s12' ? showerT.value : false,
             waterHeat: waterHeat.value,
             dishWA: dishWA.value,
-        }));
+        };
+        ipcRenderer.send('button3:clicked', data);
     };
 
     ipcRenderer.on('rWindow:opened', function () {
