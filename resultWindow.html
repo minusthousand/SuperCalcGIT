@@ -18,6 +18,7 @@
     const { ipcRenderer } = electron;
     const ul = document.querySelector('ul');
     const h6 = document.querySelector('h6');
+    var br = document.createElement('br');
     function rnd(number) {
         return Math.round(number);
     };
@@ -25,7 +26,6 @@
     ipcRenderer.on('data', function (e, dataJson) {
         var data = JSON.parse(dataJson);
         ul.className = 'collection';
-        var br = document.createElement('br');
         var pcEg = 0,
             ltopEg = 0,
             comSpkEg = 0,
@@ -224,17 +224,28 @@
             const li = document.createElement('li');
             let windowANum = Number(data.windowA);
             li.className = 'collection-item';
+            let windowsText;
+            let advise;
+            const tpUsage = rnd(windowANum * 20 / (0.005 / 0.8 * 3 + 0.005 / 0.024 * 2) * 205 * 24 / 1000);
             switch (data.windowT) {
                 case 'sp':
-                    li.textContent = rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000) + ' kwh you lose because of windows.';
+                    windowsText =  document.createTextNode(rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000 * 100) / 100 + ' kwh you lose because of windows.');
+                    advise = document.createTextNode('You can save ' + (rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000) - tpUsage) + ' kwh per year if you switch to triple pane windows.');
+                    var xkwh = (windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000);
                     break;
                 case 'dp':
-                    li.textContent = rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000) + ' kwh you lose because of windows.';
+                    windowsText = document.createTextNode(rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000 * 100) / 100 + ' kwh you lose because of windows.');
+                    advise = document.createTextNode('You can save ' + (rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000) - tpUsage) + ' kwh per year if you switch to triple pane windows.');
+                    var xkwh = (windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000);
                     break;
                 case 'tp':
-                    li.textContent = rnd(windowANum * 20 / (0.005 / 0.8 * 3 + 0.005 / 0.024 * 2) * 205 * 24 / 1000) + ' kwh you lose because of windows.';
+                    windowsText = document.createTextNode(tpUsage + ' kwh you lose because of windows.');
+                    advise = document.createTextNode('You are using most efficient type of windows.');
+                    var xkwh = tpUsage;
             };
-            var xkwh = parseInt(li.textContent);
+            li.appendChild(windowsText);
+            li.appendChild(br);
+            li.appendChild(advise);
             ul.appendChild(li);
         }
         if (data.homeT !== false) {
@@ -268,19 +279,16 @@
         }
         if (data.heatM !== false) {
             const li = document.createElement('li');
-            const li2 = document.createElement('li');
             let heatMNum = Number(data.heatM);
             li.className = 'collection-item';
-            li2.className = 'collection-item';
-            li.textContent = 'In ' + rnd(245 / heatMNum * 0.12 * 100) / 100 + ' months saving will be equal with the price of thermostat.';
             ul.appendChild(li);
             if (data.homeT == 'house') {
-                li2.textContent = rnd(heatMNum * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
-                ul.appendChild(li2);
+                li.textContent = rnd(heatMNum * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li);
             }
             else if (data.homeT == 'flat') {
-                li2.textContent = rnd(heatMNum * 0.018 * 100) / 100 + ' kg of CO² you produce per season.';
-                ul.appendChild(li2);
+                li.textContent = rnd(heatMNum * 0.018 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li);
             }
 
         };
@@ -309,10 +317,27 @@
             liW.className = 'collection-item';
             liW.textContent = Math.round((showerTNum * 54 * 65.1 - showerTNum * 54 * 40) * 100) / 100 + ' m³ of water you can save by using water efficient shower.';
             const waterS = showerTNum * 54 * 65.1 - showerTNum * 54 * 40;
+            var waterC = showerTNum * 54 * 65.1;
             liM.className = 'collection-item';
             liM.textContent = Math.round((waterS * 1.93 / 1000) * 100) / 100 + ' euros you can save by using water efficient shower.';
             ul.appendChild(liW);
             ul.appendChild(liM);
+        }
+        if (data.waterHeat !== false) {
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            switch (data.waterHeat) {
+                case 'boiler':
+                    li.textContent = 'You are spending ' + rnd(waterC * 0.088 * 0.16 * 100) / 100 + ' eur on heating water per year.';
+                    break;
+                case 'frwd':
+                    li.textContent = 'You are spending ' + rnd(waterC * 0.000088 * 23.6 * 100) / 100 + ' eur on heating water per year.';
+                    break;
+                case 'hpellets':
+                    li.textContent = 'You are spending ' + rnd(waterC * 0.000088 * 40 * 100) / 100 + ' eur on heating water per year.';
+                    break;
+            };
+            ul.appendChild(li);
         }
         if (data.dishWA !== false) {
             const li = document.createElement('li');
