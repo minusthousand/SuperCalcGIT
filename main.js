@@ -9,7 +9,7 @@ let resultWindow;
 
 app.on('ready', function () {
     mainWindow = new BrowserWindow({});
-    //    mainWindow.setMenu(null);
+    mainWindow.setMenu(null);
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
         protocol: 'file',
@@ -26,7 +26,7 @@ ipcMain.on('button:clicked', function (e, data) {
         height: 400,
         title: 'Results'
     });
-    //   resultWindow.setMenu(null);
+    resultWindow.setMenu(null);
     resultWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'resultWindow.html'),
         protocol: 'file',
@@ -48,7 +48,7 @@ ipcMain.on('button2:clicked', function (e, data) {
         height: 400,
         title: 'Results'
     });
-    //    resultWindow.setMenu(null);
+    resultWindow.setMenu(null);
     resultWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'resultWindow.html'),
         protocol: 'file',
@@ -70,7 +70,7 @@ ipcMain.on('button3:clicked', function (e, data) {
         height: 400,
         title: 'Results'
     });
-    //   resultWindow.setMenu(null);
+    resultWindow.setMenu(null);
     resultWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'resultWindow.html'),
         protocol: 'file',
