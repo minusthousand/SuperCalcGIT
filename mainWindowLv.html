@@ -28,99 +28,98 @@
     <br>
     <div class="hidden" id="water-container">
         <div class="row col s12">
-            <h4>Do you use shower?</h4>
+            <h4>Vai jūs izmantojat dušu?</h4>
             <div class="row">
                 <select onchange="checkShowerA()" class="browser-default col s6" id="shower-answer-select">
-                    <option value="yes">Yes</option>
-                    <option value="no" selected>No</option>
+                    <option value="yes">Jā</option>
+                    <option value="no" selected>Nē</option>
                 </select>
 
             </div>
         </div>
 
         <div class="hidden" id="shower-question">
-            <h4>How often a week?</h4>
-            <input type="text" id="shower-times" onkeypress="return isNumberKey(event)">Input here.</input>
+            <h4>Cik bieži?</h4>
+            <input type="text" id="shower-times" onkeypress="return isNumberKey(event)">Ievadiet šeit.</input>
         </div>
         <div class="row col s12">
-            <h4>What are you using to heat water?</h4>
+            <h4>Ko jūs izmantojat ūdens sildīšanai?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="water-heat-select">
-                    <option value="boiler" selected>Boiler</option>
-                    <option value="frwd">Firewood</option>
-                    <option value="hpellets">Heating pellets</option>
+                    <option value="boiler" selected>Boileri</option>
+                    <option value="frwd">Malku</option>
+                    <option value="hpellets">Granulas</option>
                 </select>
             </div>
         </div>
         <div class="row col s12">
-            <h4>Do you have dishwasher?</h4>
+            <h4>Vai jums ir trauku mazgājamā mašīna?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="dishwasher-answer-select">
-                    <option value="yes">Yes</option>
-                    <option value="no" selected>No</option>
+                    <option value="yes">Jā</option>
+                    <option value="no" selected>Nē</option>
                 </select>
             </div>
         </div>
         <div class="row col s12">
-            <button class="waves-effect waves-light btn" id="button-3">Calculate</button>
+            <button class="waves-effect waves-light btn" id="button-3">Aprēķināt</button>
         </div>
     </div>
     <div class="hidden" id="heating-container">
         <div class="row col s12">
-            <h4>Where do you live?</h4>
+            <h4>Kur jūs dzīvojat?</h4>
             <div class="row">
                 <select onchange="checkHomeT()" class="browser-default col s6" id="home-type-select">
-                    <option value="house" selected>House</option>
-                    <option value="flat">Flat</option>
+                    <option value="house" selected>Privātmāja</option>
+                    <option value="flat">Dzīvoklī</option>
                 </select>
 
             </div>
         </div>
         <div id="house-q" class="row col s12">
-            <h4>What do you use for heating?</h4>
+            <h4>Ko jūs izmantojat apkurei?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="heating-type-select">
-                    <option value="firewood">Firewood</option>
-                    <option value="heat-pellets">Heating pellets</option>
+                    <option value="firewood">Malku</option>
+                    <option value="heat-pellets">Granulas</option>
                 </select>
 
             </div>
         </div>
         <div class="row col s12">
-            <h4>Type of windows you have.</h4>
+            <h4>Kāda tipa logi jums ir?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="window-type-select">
-                    <option value="sp" selected>Single-pane</option>
-                    <option value="dp">Double-pane</option>
-                    <option value="tp">Triple-pane</option>
+                    <option value="sp" selected>Vienkārtas logi</option>
+                    <option value="dp">Divkārtas logi</option>
+                    <option value="tp">Trīskārtas logi</option>
                 </select>
 
             </div>
         </div>
         <div class="row col s12">
-            <h4>What surface area do your windows take?</h4>
-            <input type="text" id="window-area" onkeypress="return isNumberKey(event)">Input value in m².</input>
+            <h4>Cik lielu platību jūsu logi aizņem?</h4>
+            <input type="text" id="window-area" onkeypress="return isNumberKey(event)">Ievadiet platību m².</input>
         </div>
         <div class="row col s12">
-            <h4>How much money do you spend on heating per season?</h4>
-            <input type="text" id="heat-money" onkeypress="return isNumberKey(event)">Input
-            amount in euros.</input>
+            <h4>Cik daudz naudas jūs tērējat uz apkuri sezonā?</h4>
+            <input type="text" id="heat-money" onkeypress="return isNumberKey(event)">Ievadiet patēriņu eiro.</input>
         </div>
         <div class="row col s12">
-            <button class="waves-effect waves-light btn" id="button-2">Calculate</button>
+            <button class="waves-effect waves-light btn" id="button-2">Aprēķināt</button>
         </div>
     </div>
     <div class="container row" id="main-container">
         <div class="col s12">
-            <h4>What type of light bulbs do you have?</h4>
+            <h4>Kāda tipa spuldzes jūs izmantojat?</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="blb-amount" onkeypress="return isNumberKey(event)">Input
-                    how many light bulbs do you have.</input>
+                    <input type="text" value="1" id="blb-amount" onkeypress="return isNumberKey(event)">Ievadiet cik
+                    daudz spuldžu jums ir.</input>
                 </div>
                 <div class="col s6">
                     <select class="browser-default col s12" id="lightblb-select">
-                        <option value="" disabled>Light bulbs Type</option>
+                        <option value="" disabled>Spuldžu veids</option>
                         <option value="led" selected>LED</option>
                         <option value="cfl">CFL</option>
                         <option value="ilb">Incandescent</option>
@@ -129,14 +128,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Computer</h4>
+            <h4>Galddators</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="computer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="computer-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -149,14 +148,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Laptop</h4>
+            <h4>Portatīvais dators</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="laptop-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="laptop-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -169,14 +168,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Computer speakers</h4>
+            <h4>Skaļruņi</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="com-spk-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="com-spk-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -189,14 +188,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Coffee Machine</h4>
+            <h4>Kafijas automāts</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -209,14 +208,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Microwave Oven</h4>
+            <h4>Mikroviļņu krāsns</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="microwave-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="microwave-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -229,14 +228,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Audio minisystem</h4>
+            <h4>Mini audio sistēma</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="audio-system-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="audio-system-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -249,14 +248,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Game console</h4>
+            <h4>Video spēļu console</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="game-console-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="game-console-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -269,14 +268,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Air conditioner</h4>
+            <h4>Gaisa kondicionieri‎s</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -289,14 +288,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Washing Machine</h4>
+            <h4>Veļas mašīna</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -309,14 +308,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Television</h4>
+            <h4>Televīzors</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="television-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="television-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <select class="browser-default col s3" id="television-select">
-                    <option value="" disabled>TV Type</option>
+                    <option value="" disabled>TV veids</option>
                     <option value="LED" selected>LED</option>
                     <option value="CRT">CRT</option>
                     <option value="RPTV">RPTV</option>
@@ -332,16 +331,16 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Printer</h4>
+            <h4>Printeris</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="printer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="printer-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <select class="browser-default col s3" id="printer-select">
                     <option value="" disabled>Printer Type</option>
-                    <option value="lsr" selected>Laser</option>
-                    <option value="ink">Inkjet</option>
+                    <option value="lsr" selected>Lāzera</option>
+                    <option value="ink">Tintes</option>
                 </select>
                 <form action="#" class="col s3">
                     <p>
@@ -354,14 +353,14 @@
             </div>
         </div>
         <div class="col s12">
-            <h4>Dishwasher</h4>
+            <h4>Trauku mazgājamā mašīna</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Ievadiet
+                    ierīču daudzumu.</input>
                 </div>
                 <div class="col s3">
-                    <p>Check if you have this.</p>
+                    <p>Atzīmējiet ja jums tas ir.</p>
                 </div>
                 <form action="#" class="col s3">
                     <p>
@@ -373,7 +372,7 @@
                 </form>
             </div>
         </div>
-        <button class="waves-effect waves-light btn" id="button">Calculate</button>
+        <button class="waves-effect waves-light btn" id="button">Aprēķināt</button>
     </div>
 </body>
 <script>
