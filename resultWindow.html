@@ -23,8 +23,7 @@
         return Math.round(number);
     };
 
-    ipcRenderer.on('data', function (e, dataJson) {
-        var data = JSON.parse(dataJson);
+    ipcRenderer.on('data', function (e, data) {
         ul.className = 'collection';
         var pcEg = 0,
             ltopEg = 0,
@@ -217,8 +216,7 @@
         h6.appendChild(blbText);
     });
 
-    ipcRenderer.on('data2', function (e, dataJson) {
-        var data = JSON.parse(dataJson);
+    ipcRenderer.on('data2', function (e, data) {
         ul.className = 'collection';
         if (data.windowT !== false) {
             const li = document.createElement('li');
@@ -294,8 +292,7 @@
         };
     });
 
-    ipcRenderer.on('data3', function (e, dataJson) {
-        var data = JSON.parse(dataJson);
+    ipcRenderer.on('data3', function (e, data) {
         ul.className = 'collection';
         if (data.showerA !== false) {
             const li = document.createElement('li');
