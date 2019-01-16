@@ -280,8 +280,12 @@
             let heatMNum = Number(data.heatM);
             li.className = 'collection-item';
             ul.appendChild(li);
-            if (data.homeT == 'house') {
-                li.textContent = rnd(heatMNum * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+            if ((data.homeT == 'house') && (data.heatingT == 'firewood')) {
+                li.textContent = rnd((heatMNum * 1000) / 8 * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li);
+            }
+            else if ((data.homeT == 'house') && (data.heatingT == 'heat-pellets')) {
+                li.textContent = rnd((heatMNum * 1000) / 5.8 * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
                 ul.appendChild(li);
             }
             else if (data.homeT == 'flat') {
