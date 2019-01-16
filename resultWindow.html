@@ -227,7 +227,7 @@
             const tpUsage = rnd(windowANum * 20 / (0.005 / 0.8 * 3 + 0.005 / 0.024 * 2) * 205 * 24 / 1000);
             switch (data.windowT) {
                 case 'sp':
-                    windowsText =  document.createTextNode(rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000 * 100) / 100 + ' kwh you lose because of windows.');
+                    windowsText = document.createTextNode(rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000 * 100) / 100 + ' kwh you lose because of windows.');
                     advise = document.createTextNode('You can save ' + (rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000) - tpUsage) + ' kwh per year if you switch to triple pane windows.');
                     var xkwh = (windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000);
                     break;
@@ -280,8 +280,12 @@
             let heatMNum = Number(data.heatM);
             li.className = 'collection-item';
             ul.appendChild(li);
-            if (data.homeT == 'house') {
-                li.textContent = rnd(heatMNum * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+            if ((data.homeT == 'house') && (data.heatingT == 'firewood')) {
+                li.textContent = rnd((heatMNum * 1000) / 8 * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
+                ul.appendChild(li);
+            }
+            else if ((data.homeT == 'house') && (data.heatingT == 'heat-pellets')) {
+                li.textContent = rnd((heatMNum * 1000) / 5.8 * 0.03 * 100) / 100 + ' kg of CO² you produce per season.';
                 ul.appendChild(li);
             }
             else if (data.homeT == 'flat') {
