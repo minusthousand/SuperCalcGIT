@@ -324,7 +324,7 @@
             ul.appendChild(liW);
             ul.appendChild(liM);
         }
-        if (data.waterHeat !== false) {
+        if ((data.waterHeat !== false) && (data.showerA !== 'no')) {
             const li = document.createElement('li');
             li.className = 'collection-item';
             switch (data.waterHeat) {
