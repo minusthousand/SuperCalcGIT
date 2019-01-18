@@ -1,6 +1,6 @@
 {
   "name": "supercalc",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "App for calculating elecricity savings",
   "main": "main.js",
   "scripts": {
