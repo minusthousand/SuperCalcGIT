@@ -72,8 +72,8 @@
             const pcA = Number(data.pcAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            pcEg = rnd(2.84 * 8640 / 1000 * 100 * pcA) / 100;
-            const pcText = document.createTextNode('Dators patērē ' + pcEg + ' kwh gadā gaidīšanas režīmā.');
+            pcEg = rnd(2.84 * 8640 / 1000 * 100 * 5 * pcA) / 100;
+            const pcText = document.createTextNode('Dators patērē ' + pcEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(pcText);
             ul.appendChild(li);
@@ -82,8 +82,8 @@
             const ltopA = Number(data.ltopAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            ltopEg = rnd(8.9 * 8640 / 1000 * 100 * ltopA) / 100;
-            const ltopText = document.createTextNode('Portatīvais dators patērē ' + ltopEg + ' kwh gadā gaidīšanas režīmā.');
+            ltopEg = rnd(8.9 * 8640 / 1000 * 100 * 5 * ltopA) / 100;
+            const ltopText = document.createTextNode('Portatīvais dators patērē ' + ltopEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(ltopText);
             ul.appendChild(li);
@@ -92,8 +92,8 @@
             const comSpkA = Number(data.comSpkAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            comSpkEg = rnd(1.79 * 8640 / 1000 * 100 * comSpkA) / 100;
-            const comSpkText = document.createTextNode('Skaļruņi patērē ' + comSpkEg + ' kwh gadā gaidīšanas režīmā.');
+            comSpkEg = rnd(1.79 * 8640 / 1000 * 100 * 5 * comSpkA) / 100;
+            const comSpkText = document.createTextNode('Skaļruņi patērē ' + comSpkEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(comSpkText);
             ul.appendChild(li);
@@ -102,8 +102,8 @@
             const coffeeMA = Number(data.coffeeMAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            coffeeMEg = rnd(1.14 * 8640 / 1000 * 100 * coffeeMA) / 100;
-            const coffeeMText = document.createTextNode('Kafijas automāts patērē ' + coffeeMEg + ' kwh gadā gaidīšanas režīmā.');
+            coffeeMEg = rnd(1.14 * 8640 / 1000 * 100 * 5 * coffeeMA) / 100;
+            const coffeeMText = document.createTextNode('Kafijas automāts patērē ' + coffeeMEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(coffeeMText);
             ul.appendChild(li);
@@ -112,8 +112,8 @@
             const microwA = Number(data.microwAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            microwEg = rnd(3.08 * 8640 / 1000 * 100 * microwA) / 100;
-            const microwText = document.createTextNode('Mikroviļņu krāsns patērē ' + microwEg + ' kwh gadā gaidīšanas režīmā.');
+            microwEg = rnd(3.08 * 8640 / 1000 * 100 * 5 * microwA) / 100;
+            const microwText = document.createTextNode('Mikroviļņu krāsns patērē ' + microwEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(microwText);
             ul.appendChild(li);
@@ -122,8 +122,8 @@
             const aSysA = Number(data.aSysAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            aSysEg = rnd(8.32 * 8640 / 1000 * 100 * aSysA) / 100;
-            const aSysText = document.createTextNode('Mini audio sistēma patērē ' + aSysEg + ' kwh gadā gaidīšanas režīmā.');
+            aSysEg = rnd(8.32 * 8640 / 1000 * 100 * 5 * aSysA) / 100;
+            const aSysText = document.createTextNode('Mini audio sistēma patērē ' + aSysEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(aSysText);
             ul.appendChild(li);
@@ -132,8 +132,8 @@
             const gConsA = Number(data.gConsAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            gConsEg = rnd(1.01 * 8640 / 1000 * 100 * gConsA) / 100;
-            const gConsText = document.createTextNode('Video spēļu console patērē ' + gConsEg + ' kwh gadā gaidīšanas režīmā.');
+            gConsEg = rnd(1.01 * 8640 / 1000 * 100 * 5 * gConsA) / 100;
+            const gConsText = document.createTextNode('Video spēļu console patērē ' + gConsEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(gConsText);
             ul.appendChild(li);
@@ -142,8 +142,8 @@
             const aCondA = Number(data.aCondAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            aCondEg = rnd(0.9 * 8640 / 1000 * 100 * aCondA) / 100;
-            const aCondText = document.createTextNode('Gaisa kondicionieri‎s patērē ' + aCondEg + ' kwh gadā gaidīšanas režīmā.');
+            aCondEg = rnd(0.9 * 8640 / 1000 * 100 * 5 * aCondA) / 100;
+            const aCondText = document.createTextNode('Gaisa kondicionieri‎s patērē ' + aCondEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(aCondText);
             ul.appendChild(li);
@@ -152,8 +152,8 @@
             const washingMA = Number(data.washingMAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            washingMEg = rnd(1 * 8640 / 1000 * 100 * washingMA) / 100;
-            const washingMText = document.createTextNode('Veļas mašīna patērē ' + washingMEg + ' kwh gadā gaidīšanas režīmā.');
+            washingMEg = rnd(1 * 8640 / 1000 * 100 * 5 * washingMA) / 100;
+            const washingMText = document.createTextNode('Veļas mašīna patērē ' + washingMEg + ' kwh piecos gados gaidīšanas režīmā.');
             li.appendChild(washingMText);
             ul.appendChild(li);
         }
@@ -164,16 +164,16 @@
             let tvText;
             switch (data.tv) {
                 case 'LED':
-                    tvEg = rnd(2.3 * 8640 / 1000 * 100 * tvA) / 100;
-                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh gadā gaidīšanas režīmā.');
+                    tvEg = rnd(2.3 * 8640 / 1000 * 100 * 5 * tvA) / 100;
+                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh piecos gados gaidīšanas režīmā.');
                     break;
                 case 'CRT':
-                    tvEg = rnd(2.88 * 8640 / 1000 * 100 * tvA) / 100;
-                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh gadā gaidīšanas režīmā.');
+                    tvEg = rnd(2.88 * 8640 / 1000 * 100 * 5 * tvA) / 100;
+                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh piecos gados gaidīšanas režīmā.');
                     break;
                 case 'RPTV':
-                    tvEg = rnd(6.6 * 8640 / 1000 * 100 * tvA) / 100;
-                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh gadā gaidīšanas režīmā.');
+                    tvEg = rnd(6.6 * 8640 / 1000 * 100 * 5 * tvA) / 100;
+                    tvText = document.createTextNode('Televīzors patērē ' + tvEg + ' kwh piecos gados gaidīšanas režīmā.');
                     break;
             };
             li.appendChild(tvText);
@@ -186,12 +186,12 @@
             let prntText;
             switch (data.prnt) {
                 case 'lsr':
-                    prntEg = rnd(1.58 * 8640 / 1000 * 100 * prntA) / 100;
-                    prntText = document.createTextNode('Printeris patērē ' + prntEg + ' kwh gadā gaidīšanas režīmā.');
+                    prntEg = rnd(1.58 * 8640 / 1000 * 100 * 5 * prntA) / 100;
+                    prntText = document.createTextNode('Printeris patērē ' + prntEg + ' kwh piecos gados gaidīšanas režīmā.');
                     break;
                 case 'ink':
-                    prntEg = rnd(1.26 * 8640 / 1000 * 100 * prntA) / 100;
-                    prntText = document.createTextNode('Printeris patērē ' + prntEg + ' kwh gadā gaidīšanas režīmā.');
+                    prntEg = rnd(1.26 * 8640 / 1000 * 100 * 5 * prntA) / 100;
+                    prntText = document.createTextNode('Printeris patērē ' + prntEg + ' kwh piecos gados gaidīšanas režīmā.');
                     break;
             };
             li.appendChild(prntText);
@@ -201,15 +201,15 @@
             const dishWA = Number(data.dishWAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
-            dishWEg = rnd(3 * 8640 / 1000 * 100 * dishWA) / 100;
-            const dishWText = document.createTextNode('Trauku mazgājamā mašīna patērē ' + dishWEg + ' kwh gadā gaidīšanas režīmā.');
+            dishWEg = rnd(3 * 8640 / 1000 * 100 * 5 * dishWA) / 100;
+            const dishWText = document.createTextNode('Trauku mazgājamā mašīna patērē ' + dishWEg + ' kwh piecos gados gaidīšanas režīmā.');
 
             li.appendChild(dishWText);
             ul.appendChild(li);
         }
 
         var totalNum = rnd((pcEg + ltopEg + comSpkEg + coffeeMEg + microwEg + aSysEg + aCondEg + gConsEg + washingMEg + tvEg + prntEg) * 100) / 100;
-        const totalText = document.createTextNode('Jūsu elektroierīces patērē ' + totalNum + ' kwh enerģijas gadā gaidīšanas režīmā, kas maksā ' + rnd(totalNum * 0.16 * 100) / 100 + ' eur un izmantojot tādu daudzumu elektrības gaisā nonāk ' + rnd(totalNum * 0.03 * 100) / 100 + ' kg CO².');
+        const totalText = document.createTextNode('Jūsu elektroierīces patērē ' + totalNum + ' kwh enerģijas piecos gados gaidīšanas režīmā, kas maksā ' + rnd(totalNum * 0.16 * 100) / 100 + ' eur un izmantojot tādu daudzumu elektrības gaisā nonāk ' + rnd(totalNum * 0.03 * 100) / 100 + ' kg CO².');
         const blbText = document.createTextNode('Jūsu spuldzes patērē ' + bulbEg + ' kwh enerģijas 25000 stundās, kas maksā ' + rnd(bulbEg * 0.13 * 100) / 100 + ' eur un izmantojot tādu daudzumu elektrības gaisā nonāk ' + rnd(bulbEg * 0.03 * 100) / 100 + ' kg CO².');
         h6.appendChild(totalText);
         h6.appendChild(br.cloneNode(true));
@@ -226,11 +226,6 @@
             let advise;
             const tpUsage = rnd(windowANum * 20 / (0.005 / 0.8 * 3 + 0.005 / 0.024 * 2) * 205 * 24 / 1000);
             switch (data.windowT) {
-                case 'sp':
-                    windowsText = document.createTextNode(rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000 * 100) / 100 + ' kwh siltuma iziet pa logiem.');
-                    advise = document.createTextNode('Jūs varat ietaupīt ' + (rnd(windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000) - tpUsage) + ' kwh siltuma gadā ja jūs nomainat pašreizējos logus uz trīskārtas logiem.');
-                    var xkwh = (windowANum * 20 * 0.8 / 0.005 * 205 * 24 / 1000);
-                    break;
                 case 'dp':
                     windowsText = document.createTextNode(rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000 * 100) / 100 + ' kwh siltuma iziet pa logiem.');
                     advise = document.createTextNode('Jūs varat ietaupīt ' + (rnd(windowANum * 20 / (0.005 / 0.8 * 2 + 0.005 / 0.024) * 205 * 24 / 1000) - tpUsage) + ' kwh siltuma gadā ja jūs nomainat pašreizējos logus uz trīskārtas logiem.');
