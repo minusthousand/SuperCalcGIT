@@ -28,7 +28,7 @@
     <br>
     <div class="hidden" id="water-container">
         <div class="row col s12">
-            <h4>Do you use shower?</h4>
+            <h4>Do you use a shower?</h4>
             <div class="row">
                 <select onchange="checkShowerA()" class="browser-default col s6" id="shower-answer-select">
                     <option value="yes">Yes</option>
@@ -39,11 +39,11 @@
         </div>
 
         <div class="hidden" id="shower-question">
-            <h4>How often a week?</h4>
+            <h4>How many times in a week?</h4>
             <input type="text" id="shower-times" onkeypress="return isNumberKey(event)">Input here.</input>
         </div>
         <div class="row col s12">
-            <h4>What are you using to heat water?</h4>
+            <h4>What do you use to heat water?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="water-heat-select">
                     <option value="boiler" selected>Boiler</option>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>Do you have dishwasher?</h4>
+            <h4>Do you have a dishwasher?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="dishwasher-answer-select">
                     <option value="yes">Yes</option>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>Type of windows you have.</h4>
+            <h4>What type of windows do you have?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="window-type-select">
                     <option value="dp" selected>Double-pane</option>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>What surface area do your windows take?</h4>
+            <h4>What is the total surface area of your windows?</h4>
             <input type="text" id="window-area" onkeypress="return isNumberKey(event)">Input value in m².</input>
         </div>
         <div class="row col s12">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="col s6">
                     <select class="browser-default col s12" id="lightblb-select">
-                        <option value="" disabled>Light bulbs Type</option>
+                        <option value="" disabled>Light bulbs type</option>
                         <option value="led" selected>LED</option>
                         <option value="cfl">CFL</option>
                         <option value="ilb">Incandescent</option>
@@ -131,8 +131,7 @@
             <h4>Computer</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="computer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="computer-amount" onkeypress="return isNumberKey(event)">How many computers do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -151,8 +150,7 @@
             <h4>Laptop</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="laptop-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="laptop-amount" onkeypress="return isNumberKey(event)">How many laptops do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -171,8 +169,7 @@
             <h4>Computer speakers</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="com-spk-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="com-spk-amount" onkeypress="return isNumberKey(event)">How many computer speakers do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -191,8 +188,7 @@
             <h4>Coffee Machine</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">How many coffee machines do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -211,8 +207,7 @@
             <h4>Microwave Oven</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="microwave-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="microwave-amount" onkeypress="return isNumberKey(event)">How many microwave ovens do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -231,8 +226,7 @@
             <h4>Audio minisystem</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="audio-system-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="audio-system-amount" onkeypress="return isNumberKey(event)">How many audio minisystems do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -251,8 +245,7 @@
             <h4>Game console</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="game-console-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="game-console-amount" onkeypress="return isNumberKey(event)">How many game consoles do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -271,8 +264,7 @@
             <h4>Air conditioner</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">How many air conditioners do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -291,8 +283,7 @@
             <h4>Washing Machine</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="washingMachine-amount" onkeypress="return isNumberKey(event)">How many washing machines do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
@@ -311,8 +302,7 @@
             <h4>Television</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="television-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="television-amount" onkeypress="return isNumberKey(event)">How many TVs do you use?</input>
                 </div>
                 <select class="browser-default col s3" id="television-select">
                     <option value="" disabled>TV Type</option>
@@ -334,8 +324,7 @@
             <h4>Printer</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="printer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="printer-amount" onkeypress="return isNumberKey(event)">How many printers do you use?</input>
                 </div>
                 <select class="browser-default col s3" id="printer-select">
                     <option value="" disabled>Printer Type</option>
@@ -356,8 +345,7 @@
             <h4>Dishwasher</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" value="1" id="dishwasher-amount" onkeypress="return isNumberKey(event)">How many dishwashers do you use?</input>
                 </div>
                 <div class="col s3">
                     <p>Check if you have this.</p>
