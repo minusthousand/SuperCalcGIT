@@ -113,7 +113,8 @@
             <h4>Kāda tipa spuldzes jūs izmantojat?</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" id="blb-amount" onkeypress="return isNumberKey(event)">Ievadiet, cik daudz spuldžu jums ir.</input>
+                    <input type="text" id="blb-amount" onkeypress="return isNumberKey(event)">Ievadiet, cik daudz
+                    spuldžu jums ir.</input>
                 </div>
                 <div class="col s6">
                     <select class="browser-default col s12" id="lightblb-select">
@@ -127,45 +128,55 @@
         </div>
         <div class="col s12">
             <h4>Galddators</h4>
-            <input type="text" id="computer-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="computer-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču
+            daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Portatīvais dators</h4>
-            <input type="text" id="laptop-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="laptop-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču
+            daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Skaļruņi</h4>
-            <input type="text" id="com-spk-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="com-spk-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču
+            daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Kafijas automāts</h4>
-            <input type="text" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto
+            ierīču daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Mikroviļņu krāsns</h4>
-            <input type="text" id="microwave-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="microwave-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču
+            daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Mini audio sistēma</h4>
-            <input type="text" id="audio-system-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="audio-system-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto
+            ierīču daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Video spēļu konsole</h4>
-            <input type="text" id="game-console-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="game-console-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto
+            ierīču daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Gaisa kondicionieri‎s</h4>
-            <input type="text" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto
+            ierīču daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Veļas mašīna</h4>
-            <input type="text" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto
+            ierīču daudzumu.</input>
         </div>
         <div class="col s12">
             <h4>Televizors</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" id="television-amount" onkeypress="return isNumberKey(event)">Ievadiet ierīču daudzumu.</input>
+                    <input type="text" id="television-amount" onkeypress="return isNumberKey(event)">Ievadiet ierīču
+                    daudzumu.</input>
                 </div>
                 <select class="browser-default col s6" id="television-select">
                     <option value="" disabled>TV veids</option>
@@ -179,7 +190,8 @@
             <h4>Printeris</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" id="printer-amount" onkeypress="return isNumberKey(event)">Ievadiet ierīču daudzumu.</input>
+                    <input type="text" id="printer-amount" onkeypress="return isNumberKey(event)">Ievadiet ierīču
+                    daudzumu.</input>
                 </div>
                 <select class="browser-default col s6" id="printer-select">
                     <option value="" disabled>Printera Veids</option>
@@ -190,9 +202,12 @@
         </div>
         <div class="col s12">
             <h4>Trauku mazgājamā mašīna</h4>
-            <input type="text" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču daudzumu.</input>
+            <input type="text" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Ievadiet izmantoto ierīču
+            daudzumu.</input>
         </div>
-        <button class="waves-effect waves-light btn" id="button">Aprēķināt</button>
+        <p class="col s12">
+            <button class="waves-effect waves-light btn" id="button">Aprēķināt</button>
+        </p>
     </div>
 </body>
 <script>
@@ -312,8 +327,8 @@
     function sendResultsE(e) {
         e.preventDefault();
         let inputs = [pcAmnt, ltopAmnt, comSpkAmnt, coffeeMAmnt, microwAmnt, aSysAmnt, gConsAmnt, aCondAmnt, washingMAmnt, tvAmnt, prntAmnt, dishWAmnt, blbAmnt];
-        let anyInputs = inputs.reduce(function(a, i) { return a + ensureNumeric(i.value) }, 0) > 0
-        if ( ! anyInputs) {
+        let anyInputs = inputs.reduce(function (a, i) { return a + ensureNumeric(i.value) }, 0) > 0
+        if (!anyInputs) {
             alert('Lūdzu ievadiet kaut vienas ierīces skaitu.')
             return false
         }
