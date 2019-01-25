@@ -499,7 +499,7 @@
             return;
         }
         let inputEmpty = [pcAmnt, ltopAmnt, comSpkAmnt, coffeeMAmnt, microwAmnt, aSysAmnt, gConsAmnt, aCondAmnt, washingMAmnt, tvAmnt, prntAmnt, dishWAmnt, blbAmnt].filter(function (item) {
-            return item.value == "";
+            return ((item.value == "") || (item.value == "0"));
         });
         inputEmpty.forEach(function (item) {
             item.value = 1;
