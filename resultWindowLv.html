@@ -38,7 +38,7 @@
             prntEg = 0,
             bulbEg = 0;
 
-        if (data.lghtblb) {
+        if (data.blbAmnt > 0) {
             const li = document.createElement('li');
             li.className = 'collection-item';
             const bulbs = Number(data.blbAmnt);
@@ -68,8 +68,8 @@
             ul.appendChild(li);
         };
 
-        if (data.pc) {
-            const pcA = Number(data.pcAmnt);
+        if (data.pcAmnt > 0) {
+            const pcA = data.pcAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             pcEg = rnd(2.84 * 8640 / 1000 * 100 * 5 * pcA) / 100;
@@ -78,8 +78,8 @@
             li.appendChild(pcText);
             ul.appendChild(li);
         };
-        if (data.ltop) {
-            const ltopA = Number(data.ltopAmnt);
+        if (data.ltopAmnt > 0) {
+            const ltopA = data.ltopAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             ltopEg = rnd(8.9 * 8640 / 1000 * 100 * 5 * ltopA) / 100;
@@ -88,8 +88,8 @@
             li.appendChild(ltopText);
             ul.appendChild(li);
         };
-        if (data.comSpk) {
-            const comSpkA = Number(data.comSpkAmnt);
+        if (data.comSpkAmnt > 0) {
+            const comSpkA = data.comSpkAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             comSpkEg = rnd(1.79 * 8640 / 1000 * 100 * 5 * comSpkA) / 100;
@@ -98,8 +98,8 @@
             li.appendChild(comSpkText);
             ul.appendChild(li);
         };
-        if (data.coffeeM) {
-            const coffeeMA = Number(data.coffeeMAmnt);
+        if (data.coffeeMAmnt > 0) {
+            const coffeeMA = data.coffeeMAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             coffeeMEg = rnd(1.14 * 8640 / 1000 * 100 * 5 * coffeeMA) / 100;
@@ -108,8 +108,8 @@
             li.appendChild(coffeeMText);
             ul.appendChild(li);
         };
-        if (data.microw) {
-            const microwA = Number(data.microwAmnt);
+        if (data.microwAmnt > 0) {
+            const microwA = data.microwAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             microwEg = rnd(3.08 * 8640 / 1000 * 100 * 5 * microwA) / 100;
@@ -118,8 +118,8 @@
             li.appendChild(microwText);
             ul.appendChild(li);
         };
-        if (data.aSys) {
-            const aSysA = Number(data.aSysAmnt);
+        if (data.aSysAmnt > 0) {
+            const aSysA = data.aSysAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             aSysEg = rnd(8.32 * 8640 / 1000 * 100 * 5 * aSysA) / 100;
@@ -128,8 +128,8 @@
             li.appendChild(aSysText);
             ul.appendChild(li);
         };
-        if (data.gCons) {
-            const gConsA = Number(data.gConsAmnt);
+        if (data.gConsAmnt > 0) {
+            const gConsA = data.gConsAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             gConsEg = rnd(1.01 * 8640 / 1000 * 100 * 5 * gConsA) / 100;
@@ -138,8 +138,8 @@
             li.appendChild(gConsText);
             ul.appendChild(li);
         };
-        if (data.aCond) {
-            const aCondA = Number(data.aCondAmnt);
+        if (data.aCondAmnt > 0) {
+            const aCondA = data.aCondAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             aCondEg = rnd(0.9 * 8640 / 1000 * 100 * 5 * aCondA) / 100;
@@ -148,8 +148,8 @@
             li.appendChild(aCondText);
             ul.appendChild(li);
         };
-        if (data.washingM) {
-            const washingMA = Number(data.washingMAmnt);
+        if (data.washingMAmnt > 0) {
+            const washingMA = data.washingMAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             washingMEg = rnd(1 * 8640 / 1000 * 100 * 5 * washingMA) / 100;
@@ -157,8 +157,8 @@
             li.appendChild(washingMText);
             ul.appendChild(li);
         }
-        if (data.tv !== false) {
-            const tvA = Number(data.tvAmnt);
+        if (data.tvAmnt > 0) {
+            const tvA = data.tvAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             let tvText;
@@ -179,8 +179,8 @@
             li.appendChild(tvText);
             ul.appendChild(li);
         }
-        if (data.prnt !== false) {
-            const prntA = Number(data.prntAmnt);
+        if (data.prntAmnt > 0) {
+            const prntA = data.prntAmnt;
             const li = document.createElement('li');
             li.className = 'collection-item';
             let prntText;
@@ -197,7 +197,7 @@
             li.appendChild(prntText);
             ul.appendChild(li);
         }
-        if (data.dishW) {
+        if (data.dishWAmnt > 0) {
             const dishWA = Number(data.dishWAmnt);
             const li = document.createElement('li');
             li.className = 'collection-item';
