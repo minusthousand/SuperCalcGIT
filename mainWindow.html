@@ -28,7 +28,7 @@
     <br>
     <div class="hidden" id="water-container">
         <div class="row col s12">
-            <h4>Do you use shower?</h4>
+            <h4>Do you use a shower?</h4>
             <div class="row">
                 <select onchange="checkShowerA()" class="browser-default col s6" id="shower-answer-select">
                     <option value="yes">Yes</option>
@@ -39,11 +39,11 @@
         </div>
 
         <div class="hidden" id="shower-question">
-            <h4>How often a week?</h4>
+            <h4>How many times in a week?</h4>
             <input type="text" id="shower-times" onkeypress="return isNumberKey(event)">Input here.</input>
         </div>
         <div class="row col s12">
-            <h4>What are you using to heat water?</h4>
+            <h4>What do you use to heat water?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="water-heat-select">
                     <option value="boiler" selected>Boiler</option>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>Do you have dishwasher?</h4>
+            <h4>Do you have a dishwasher?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="dishwasher-answer-select">
                     <option value="yes">Yes</option>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>Type of windows you have.</h4>
+            <h4>What type of windows do you have?</h4>
             <div class="row">
                 <select class="browser-default col s6" id="window-type-select">
                     <option value="dp" selected>Double-pane</option>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="row col s12">
-            <h4>What surface area do your windows take?</h4>
+            <h4>What is the total surface area of your windows?</h4>
             <input type="text" id="window-area" onkeypress="return isNumberKey(event)">Input value in m².</input>
         </div>
         <div class="row col s12">
@@ -114,12 +114,12 @@
             <h4>What type of light bulbs do you have?</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="blb-amount" onkeypress="return isNumberKey(event)">Input
+                    <input type="text" id="blb-amount" onkeypress="return isNumberKey(event)">Input
                     how many light bulbs do you have.</input>
                 </div>
                 <div class="col s6">
                     <select class="browser-default col s12" id="lightblb-select">
-                        <option value="" disabled>Light bulbs Type</option>
+                        <option value="" disabled>Light bulbs type</option>
                         <option value="led" selected>LED</option>
                         <option value="cfl">CFL</option>
                         <option value="ilb">Incandescent</option>
@@ -129,248 +129,70 @@
         </div>
         <div class="col s12">
             <h4>Computer</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="computer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="computer" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="computer-amount" onkeypress="return isNumberKey(event)">How many computers do you use?</input>
         </div>
         <div class="col s12">
             <h4>Laptop</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="laptop-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="laptop" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="laptop-amount" onkeypress="return isNumberKey(event)">How many laptops do you use?</input>
         </div>
         <div class="col s12">
             <h4>Computer speakers</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="com-spk-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="com-spk" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="com-spk-amount" onkeypress="return isNumberKey(event)">How many computer speakers do you use?</input>
         </div>
         <div class="col s12">
             <h4>Coffee Machine</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="coffeeMachine" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="coffeeMachine-amount" onkeypress="return isNumberKey(event)">How many coffee machines do you use?</input>
         </div>
         <div class="col s12">
             <h4>Microwave Oven</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="microwave-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="microwave" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="microwave-amount" onkeypress="return isNumberKey(event)">How many microwave ovens do you use?</input>
         </div>
         <div class="col s12">
             <h4>Audio minisystem</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="audio-system-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="audio-system" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="audio-system-amount" onkeypress="return isNumberKey(event)">How many audio minisystems do you use?</input>
         </div>
         <div class="col s12">
             <h4>Game console</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="game-console-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="game-console" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="game-console-amount" onkeypress="return isNumberKey(event)">How many game consoles do you use?</input>
         </div>
         <div class="col s12">
             <h4>Air conditioner</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="air-conditioner" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="air-conditioner-amount" onkeypress="return isNumberKey(event)">How many air conditioners do you use?</input>
         </div>
         <div class="col s12">
             <h4>Washing Machine</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="washingMachine-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="washingMachine" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="washingMachine-amount" onkeypress="return isNumberKey(event)">How many washing machines do you use?</input>
         </div>
         <div class="col s12">
             <h4>Television</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="television-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" id="television-amount" onkeypress="return isNumberKey(event)">How many TVs do you use?</input>
                 </div>
-                <select class="browser-default col s3" id="television-select">
+                <select class="browser-default col s6" id="television-select">
                     <option value="" disabled>TV Type</option>
                     <option value="LED" selected>LED</option>
                     <option value="CRT">CRT</option>
                     <option value="RPTV">RPTV</option>
                 </select>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="television" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
             </div>
         </div>
         <div class="col s12">
             <h4>Printer</h4>
             <div class="row">
                 <div class="col s6">
-                    <input type="text" value="1" id="printer-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
+                    <input type="text" id="printer-amount" onkeypress="return isNumberKey(event)">How many printers do you use?</input>
                 </div>
-                <select class="browser-default col s3" id="printer-select">
+                <select class="browser-default col s6" id="printer-select">
                     <option value="" disabled>Printer Type</option>
                     <option value="lsr" selected>Laser</option>
                     <option value="ink">Inkjet</option>
                 </select>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="printer" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
             </div>
         </div>
         <div class="col s12">
             <h4>Dishwasher</h4>
-            <div class="row">
-                <div class="col s6">
-                    <input type="text" value="1" id="dishwasher-amount" onkeypress="return isNumberKey(event)">Input
-                    amount.</input>
-                </div>
-                <div class="col s3">
-                    <p>Check if you have this.</p>
-                </div>
-                <form action="#" class="col s3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="dishwasher" />
-                            <span></span>
-                        </label>
-                    </p>
-                </form>
-            </div>
+            <input type="text" id="dishwasher-amount" onkeypress="return isNumberKey(event)">How many dishwashers do you use?</input>
         </div>
         <button class="waves-effect waves-light btn" id="button">Calculate</button>
     </div>
@@ -447,21 +269,20 @@
         return true;
     };
 
-    var pc = id('computer'),
-        ltop = id('laptop'),
-        comSpk = id('com-spk'),
-        coffeeM = id('coffeeMachine'),
-        microw = id('microwave'),
-        aSys = id('audio-system'),
-        gCons = id('game-console'),
-        aCond = id('air-conditioner'),
-        washingM = id('washingMachine'),
-        tv = id('television'),
-        dishW = id('dishwasher'),
-        prnt = id('printer'),
-        lghtblb = id('lightblb-select'),
-        blbAmnt = id('blb-amount');
-    var pcAmnt = id('computer-amount'),
+    function ensureNumeric(val) {
+        val = val.trim();
+        if (val === '') {
+            return 0;
+        }
+        val = parseInt(val, 10);
+        if (isNaN(val) || Math.abs(val) === Infinity) {
+            return 0;
+        }
+        return val;
+    }
+
+    var blbAmnt = id('blb-amount'),
+        pcAmnt = id('computer-amount'),
         ltopAmnt = id('laptop-amount'),
         comSpkAmnt = id('com-spk-amount'),
         coffeeMAmnt = id('coffeeMachine-amount'),
@@ -491,48 +312,31 @@
     btn.addEventListener('click', sendResultsE);
 
     function sendResultsE(e) {
-        let elemsSome = [pc, ltop, comSpk, coffeeM, microw, aSys, gCons, aCond, washingM, tv, prnt, dishW].some(function (item) {
-            return item.checked;
-        });
         e.preventDefault();
-        if (!elemsSome) {
-            alert('Please check at least one option.');
-            return;
+        let inputs = [pcAmnt, ltopAmnt, comSpkAmnt, coffeeMAmnt, microwAmnt, aSysAmnt, gConsAmnt, aCondAmnt, washingMAmnt, tvAmnt, prntAmnt, dishWAmnt, blbAmnt];
+        let anyInputs = inputs.reduce(function(a, i) { return a + ensureNumeric(i.value) }, 0) > 0
+        if ( ! anyInputs) {
+            alert('Please enter some devices that you have.')
+            return false
         }
-        let inputEmpty = [pcAmnt, ltopAmnt, comSpkAmnt, coffeeMAmnt, microwAmnt, aSysAmnt, gConsAmnt, aCondAmnt, washingMAmnt, tvAmnt, prntAmnt, dishWAmnt, blbAmnt].filter(function (item) {
-            return ((item.value == "") || (item.value == "0"));
-        });
-        inputEmpty.forEach(function (item) {
-            item.value = 1;
-        });
 
         let data = {
-            lghtblb: lghtblb.value,
-            blbAmnt: blbAmnt.value,
-            pc: pc.checked,
-            ltop: ltop.checked,
-            comSpk: comSpk.checked,
-            coffeeM: coffeeM.checked,
-            microw: microw.checked,
-            aSys: aSys.checked,
-            gCons: gCons.checked,
-            aCond: aCond.checked,
-            washingM: washingM.checked,
-            tv: tv.checked ? id('television-select').value : false,
-            prnt: prnt.checked ? id('printer-select').value : false,
-            dishW: dishW.checked,
-            pcAmnt: pcAmnt.value,
-            ltopAmnt: ltopAmnt.value,
-            comSpkAmnt: comSpkAmnt.value,
-            coffeeMAmnt: coffeeMAmnt.value,
-            microwAmnt: microwAmnt.value,
-            aSysAmnt: aSysAmnt.value,
-            gConsAmnt: gConsAmnt.value,
-            aCondAmnt: aCondAmnt.value,
-            washingMAmnt: washingMAmnt.value,
-            tvAmnt: tvAmnt.value,
-            prntAmnt: prntAmnt.value,
-            dishWAmnt: dishWAmnt.value,
+            lghtblb: id('lightblb-select').value,
+            tvKind: id('television-select').value,
+            prntKind: id('printer-select').value,
+            blbAmnt: ensureNumeric(blbAmnt.value),
+            pcAmnt: ensureNumeric(pcAmnt.value),
+            ltopAmnt: ensureNumeric(ltopAmnt.value),
+            comSpkAmnt: ensureNumeric(comSpkAmnt.value),
+            coffeeMAmnt: ensureNumeric(coffeeMAmnt.value),
+            microwAmnt: ensureNumeric(microwAmnt.value),
+            aSysAmnt: ensureNumeric(aSysAmnt.value),
+            gConsAmnt: ensureNumeric(gConsAmnt.value),
+            aCondAmnt: ensureNumeric(aCondAmnt.value),
+            washingMAmnt: ensureNumeric(washingMAmnt.value),
+            tvAmnt: ensureNumeric(tvAmnt.value),
+            prntAmnt: ensureNumeric(prntAmnt.value),
+            dishWAmnt: ensureNumeric(dishWAmnt.value),
         };
 
         ipcRenderer.send('button:clicked', data);
